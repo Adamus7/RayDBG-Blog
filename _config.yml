@@ -71,3 +71,4 @@ deploy:
   type: git
   repo: https://adamusdeploy:xxx@myadamusblog.scm.azurewebsites.net:443/MyAdamusBlog.git
   branch: master
+  
