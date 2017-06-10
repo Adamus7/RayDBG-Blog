@@ -6,7 +6,7 @@ tags:
 - Logic Apps
 - CRM WebAPI
 ---
-You probably often use web API provide by Azure/Microsoft in your web applications for customized requirements. Normally, you should follow OAuth 2.0 code authorization flow to acquire the access token for the API in your web application. But in [Logic Apps](https://azure.microsoft.com/en-us/services/logic-apps/), the story is different because all the actions of a work flow are executed in the backend.
+You probably often use web API provide by Azure/Microsoft in your web applications for customized requirements. Normally, you should follow OAuth 2.0 code authorization flow to acquire the access token for the API in your web application. But in [Logic Apps](https://azure.microsoft.com/en-us/services/logic-apps/), the story is different because all the actions of a work flow are executed in backend.
 In this blog, we will discuss how to consume Azure API in Logic Apps. In our experiment, we will use [CRM WebAPI](https://msdn.microsoft.com/en-us/library/mt593051.aspx) as an example.
 <!-- more -->
 
@@ -57,26 +57,27 @@ To generate an access token, we need to configure a client secret. To do this we
 ## Part 2: Acquire an access token and use it to call CRM WebAPI
 1. Add an action to acquire access token
 {% asset_img image012.png %}
->Note*: 
->Set Headers:
->Cache-Control: no-cache
->Content-Type: application/x-www-form-urlencoded
->Set Body:
->client_id: Client ID from Azure AD
->client_secret: Client ID from Azure AD
->username: username of the crm user
->password: crm user's password
->resource: crm url eg: https://alphac25.crm5.dynamics.com
->grant_type: password
+Set Headers:
+```
+Cache-Control: no-cache
+Content-Type: application/x-www-form-urlencoded
+Set Body:
+client_id: Client ID from Azure AD
+client_secret: Client ID from Azure AD
+username: username of the crm user
+password: crm user's password
+resource: crm url eg: https://alphac25.crm5.dynamics.com
+grant_type: password
+```
 2. Add an action to Parse the HTTP response.
 {% asset_img image013.png %}
 3. Add another HTTP action to call CRM WebAPI:
 {% asset_img image014.png %}
->Note*:
->Authorization: Bearer <access_token>
->Accept: application/json
->OData-Version: 4.0
->Cache-Control: no-cache
-
-*Here is my test result:
+```
+Authorization: Bearer <access_token>
+Accept: application/json
+OData-Version: 4.0
+Cache-Control: no-cache
+```
+## Test result:
 {% asset_img image015.png %}
