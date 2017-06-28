@@ -2,6 +2,7 @@
 title: Understand the Servicing Model for Windows
 date: 2017-06-22 22:28:07
 tags:
+- Windows
 ---
 Recently, one of IE KB bring a print issue to IE 11 on versions of Windows. Before getting the fix, the only solution is to uninstall the problematic KB. But many people are confused by one question: which KB should I uninstall? To answer it, we need to figue out the patch releasing model of Windows.
 <!-- more --> 
@@ -16,7 +17,7 @@ From Oct 2016, a new patch releasing model, *Rollup Model*, was introduced to th
 * **Cumulative Security Update for Internet Explorer** (aka the *CU for IE*)
     Fixes for IE                                                                        
     
-Here is an diagram which can illustrate the relationship between different KBs:
+Here is an diagram which can illustrate the relationship between different updates:
 {% asset_img image1.png Four different patches %}
 
 Therefore, let's look back to the IE printing issue, what you need to do is to uninsll the Monthly Rollup KB if you have installed or the Cumulative Security Update for Internet Explorer if you have installed.
@@ -26,5 +27,5 @@ For more details, you can check the KB aritles here:
 * Win 8.1 & 2012 R2: [Windows 8.1 and Windows Server 2012 R2 update history](https://support.microsoft.com/en-us/help/4009470)
 
 # Windows 10
-On Windows 10, the story is simple. There is only one package, which contains all fixes, for different builds of Windows 10. For the update history, you can check it here:
-* [Windows 10 update history](https://support.microsoft.com/en-us/help/4018124/windows-10-update-history)
+On Windows 10, the story is simple. There is only one package, which contains all fixes, for different builds of Windows 10. You can check the update history here:
+* Win 10: [Windows 10 update history](https://support.microsoft.com/en-us/help/4018124/windows-10-update-history)
