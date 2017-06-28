@@ -1,5 +1,5 @@
 ---
-title: Understand the Servicing Model for Windows
+title: Understanding the Servicing Model for Windows
 date: 2017-06-22 22:28:07
 tags:
 - Windows

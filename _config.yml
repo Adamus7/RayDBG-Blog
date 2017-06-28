@@ -70,6 +70,6 @@ theme: next
 ## Docs: https://hexo.io/docs/deployment.html
 deploy: 
   type: git
-  repo: https://adamusdeploy:xxx@myadamusblog.scm.azurewebsites.net:443/MyAdamusBlog.git
+  repo: https://adamusdeploy:Internet=01!@myadamusblog.scm.azurewebsites.net:443/MyAdamusBlog.git
   branch: master
   
