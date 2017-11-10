@@ -101,6 +101,6 @@ Write-Host "..Done."
 
 Enjoy it.
 References:
-    [Adjusting Token Privileges in PowerShell](http://www.leeholmes.com/blog/2010/09/24/adjusting-token-privileges-in-powershell/)
-    [How do I take ownership of a registry key via PowerShell?](https://stackoverflow.com/questions/12044432/how-do-i-take-ownership-of-a-registry-key-via-powershell)
+* [Adjusting Token Privileges in PowerShell](http://www.leeholmes.com/blog/2010/09/24/adjusting-token-privileges-in-powershell/)
+* [How do I take ownership of a registry key via PowerShell?](https://stackoverflow.com/questions/12044432/how-do-i-take-ownership-of-a-registry-key-via-powershell)
 

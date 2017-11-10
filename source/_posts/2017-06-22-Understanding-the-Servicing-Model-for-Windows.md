@@ -4,7 +4,7 @@ date: 2017-06-22 22:28:07
 tags:
 - Windows
 ---
-Recently, one of IE KB bring a print issue to IE 11 on versions of Windows. Before getting the fix, the only solution is to uninstall the problematic KB. But many people are confused by one question: which KB should I uninstall? To answer it, we need to figue out the patch releasing model of Windows.
+Recently, one of IE KB bring a print issue to IE 11 on different versions of Windows. Before getting the fix, the only solution is to uninstall the problematic KB. But many people are confused by one question: which KB should I uninstall? To answer it, we need to figure out the patch releasing model of Windows.
 <!-- more --> 
 # Before Windows 10
 From Oct 2016, a new patch releasing model, *Rollup Model*, was introduced to the family of Windows 7SP1/2008R2, Windows 8.1 and Windows 2012/R2 by Microsoft. Later, starting with February 2017, Microsoft decided to exclude the Cumulative Security Update for Internet Explorer from Security Only updates. Meanwhile, there will be a standalone patch for IE will be released every month. So now, normally, you should see 4 different types of patch in one month:
@@ -20,9 +20,9 @@ From Oct 2016, a new patch releasing model, *Rollup Model*, was introduced to th
 Here is an diagram which can illustrate the relationship between different updates:
 {% asset_img image1.png Four different patches %}
 
-Therefore, let's look back to the IE printing issue, what you need to do is to uninsll the Monthly Rollup KB if you have installed or the Cumulative Security Update for Internet Explorer if you have installed.
+Therefore, let's go back to the IE printing issue, what you need to do is to uninstall the Monthly Rollup KB if you have installed or the Cumulative Security Update for Internet Explorer if you have installed.
 
-For more details, you can check the KB aritles here:
+For more details, you can check the KB articles here:
 * Win 7 SP1 & 2008 R2: [Windows 7 SP1 and Windows Server 2008 R2 SP1 update history](https://support.microsoft.com/en-us/help/4009469)
 * Win 8.1 & 2012 R2: [Windows 8.1 and Windows Server 2012 R2 update history](https://support.microsoft.com/en-us/help/4009470)
 
