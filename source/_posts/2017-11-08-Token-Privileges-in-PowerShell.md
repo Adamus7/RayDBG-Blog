@@ -6,12 +6,12 @@ tags: PowerShell TokenPrivileges
 One common task in my daily work is to create a PowerShell script to modify the ACL(Access Control List) of Folders or Registrys on Windows. When I run some commands to take the ownership of the Folders or Registrys, sometimes I get permission denied error, even I have ran it as Administrator. What happens?
 <!-- more --> 
 # Access Tokens and Privileges
-According the article [here](https://msdn.microsoft.com/en-us/library/windows/desktop/ms721532(v=vs.85).aspx#_security_access_token_gly): An access token contains the security information for a logon session. The system creates an access token when a user logs on, and every process executed on behalf of the user has a copy of the token. The token identifies the user, the user's groups, and the user's **privileges**.
+According the article [here](https://msdn.microsoft.com/en-us/library/windows/desktop/ms721532.aspx#_security_access_token_gly): An access token contains the security information for a logon session. The system creates an access token when a user logs on, and every process executed on behalf of the user has a copy of the token. The token identifies the user, the user's groups, and the user's **privileges**.
 A **privileges** is the right of an account, such as a user or group account, to perform various system-related operations on the local computer, such as shutting down the system, loading device drivers, or changing the system time.
 So when you get the permission error, it doesn’t mean that you can’t do it – just that you need to enable the privilege before doing it.
 
 # Solution
-Windows provied a API, [AdjustTokenPrivileges(https://msdn.microsoft.com/en-us/library/windows/desktop/aa375202(v=vs.85).aspx)],to adjust the privileges in the specifiled access token.
+Windows provied a API, [AdjustTokenPrivileges](https://msdn.microsoft.com/en-us/library/windows/desktop/aa375202.aspx), to adjust the privileges in the specified access token.
 Here is an example, I would like to delete some registry key under [HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Component Based Servicing\Packages\]. If I ran the command Remove-Item to delete it, probably it will be denied by the OS.
 So I need call the API to manipulate the privileges before calling Remove-Item.
 Here is sample script:

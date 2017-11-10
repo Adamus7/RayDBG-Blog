@@ -52,7 +52,7 @@ Alternatively, you can export the Interface configuration profile from one machi
     {% endcodeblock %}
 
 Reference:
-* [Configure 802.1X Wired Access Clients by using Group Policy Management](https://msdn.microsoft.com/en-us/library/cc731213(v=ws.11).aspx)
+* [Configure 802.1X Wired Access Clients by using Group Policy Management](https://msdn.microsoft.com/en-us/library/cc731213.aspx)
 * [Import and Export Wired Authentication Settings with Netsh](http://techgenix.com/importandexportwiredauthenticationsettingswithnetsh/)
 
  
