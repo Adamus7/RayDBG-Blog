@@ -351,10 +351,10 @@ changyan:
 
 # Google Webmaster tools verification setting
 # See: https://www.google.com/webmasters/
-#google_site_verification:
+google_site_verification: google-site-verification=VUMaTAx-InrRwlDhK4xguCO7NecW9uRxn8PamsB8Q_E
 
 # Google Analytics
-#google_analytics:
+google_analytics: UA-109690789-1
 
 # Yandex Webmaster tools verification setting
 # See: https://webmaster.yandex.ru/
