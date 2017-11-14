@@ -1,7 +1,9 @@
 ---
 title: Token Privileges in PowerShell
 date: 2017-11-08 17:06:51
-tags: PowerShell TokenPrivileges
+tags:
+- PowerShell
+- TokenPrivileges
 ---
 One common task in my daily work is to create a PowerShell script to modify the ACL(Access Control List) of Folders or Registrys on Windows. When I run some commands to take the ownership of the Folders or Registrys, sometimes I get permission denied error, even I have ran it as Administrator. What happens?
 <!-- more --> 

@@ -3,6 +3,7 @@ title: Understanding the Servicing Model for Windows
 date: 2017-06-22 22:28:07
 tags:
 - Windows
+- Update
 ---
 Recently, one of IE KB bring a print issue to IE 11 on different versions of Windows. Before getting the fix, the only solution is to uninstall the problematic KB. But many people are confused by one question: which KB should I uninstall? To answer it, we need to figure out the patch releasing model of Windows.
 <!-- more --> 

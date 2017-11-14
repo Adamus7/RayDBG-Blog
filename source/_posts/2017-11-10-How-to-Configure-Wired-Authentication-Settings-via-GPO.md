@@ -1,7 +1,9 @@
 ---
 title: Configure wired authentication settings via GPO
 date: 2017-11-10 16:26:30
-tags: GPO NAC authentication
+tags:
+- GPO
+- NAC authentication
 ---
 Use the following procedure to deploy sample wired authentication settings to NAP client computers for use with NAP and 802.1X enforcement.
 <!-- more -->
