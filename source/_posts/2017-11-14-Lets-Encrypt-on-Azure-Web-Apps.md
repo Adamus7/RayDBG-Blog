@@ -3,8 +3,8 @@ title: Let's Encrypt Azure Web Apps
 date: 2017-11-14 14:48:45
 tags: Azure WebApp Let'sEncrypt
 ---
-HTTPS(Hyper Text Transfer Protocol Secure) is the secure version of HTTP which allowing all communications between your browser and the website are encrypted. HTTPS offers an extra layer of security because it uses SSL to transfer data. Web browsers such as Internet Explorer, Edge and Chrome will display a **padlock** icon in the address bar to visually indicate that a HTTPS connection is in effect.
-However, the process of acquiring an TLS/SSL certification and enable HTTPS protocol has never been easy. You have to pay extra money for a certificates every year and deal with a lot of details settings. Let's Encrypt, a new certificate authority, provide a simple and free process of manual certificate creation, validation, singing, installation and renewal. Please note, the free Let's Encrypt certificate will be expired in 3 months, which means you need a process to periodically renew the certificate. In this blog, I would like to document how I apply HTTPS on Azure Web App with Let's Encrypt and enable auto certificate renewal.
+HTTPS (Hyper Text Transfer Protocol Secure) is the secure version of HTTP which allowing all communications between your browser and the website are encrypted. HTTPS offers an extra layer of security because it uses SSL to transfer data. Web browsers such as Internet Explorer, Edge and Chrome will display a **padlock** icon in the address bar to visually indicate that a HTTPS connection is in effect.
+However, the process of acquiring an TLS/SSL certification and enable HTTPS protocol has never been easy. You have to pay extra money for a certificates every year and deal with a lot of detail settings. **Let's Encrypt**, a new certificate authority, provide a simple and free process of manual certificate creation, validation, singing, installation and renewal. Please note, the free Let's Encrypt certificate will be expired in 3 months, which means you need a process to periodically renew the certificate if you choose it. In this blog, I would like to document how I apply HTTPS on my Azure Web App with Let's Encrypt and enable auto certificate renewal.
 <!-- more -->
 # Pre story
 [Add support for free SSL certs like those from Let's Encrypt](https://feedback.azure.com/forums/169385-web-apps-formerly-websites/suggestions/6737285-add-support-for-free-ssl-certs-like-those-from-let) is a high votes feature on Azure Web App for a long time. It is resolved by community that Simon published a Azure Site extension, [Azure Let's Encrypt](http://www.siteextensions.net/packages/letsencrypt), for easy install and renewals of Let's Encrypt SSL certificates.
@@ -38,8 +38,8 @@ Click Create
     {% asset_img 06.png %}
 
 So now you should have 
-*   Application ID
-*   Secret Key
+*   **Application ID**
+*   **Secret Key**
 
 ### Grant permission to the Service Principal
 1.  Navigate to your resource group for you App Service and App Service Plan
@@ -66,7 +66,7 @@ The first page of the site contains the following fields that must be provided b
 >   **ServicePlanResourceGroupName** - is the name of the resource group that the App Service Plan is located in, e.i. if you are hosting everything in the same resource group ServicePlanResourceGroupName should equal ResourceGroupName
 >   **Update Application Settings** - set this to true to save the setting as web application settings, this is required if you didn't already add the settings as web app settings, so the values are available for the renew certificate web job later.
     
-    {% asset_img 10.png %}
+{% asset_img 10.png %}
 
 ### Verify Hostnames
 Before you can request a Let's Encrypt certificate for the web app, you need to register a custom domain name. Once a domain name is registered you should see something similar to this:
@@ -79,7 +79,7 @@ Click Request and install certificates.
 Wait a little, while the certificate gets requested and installed and assigned to your domain.
 
 # Done!
-Now, let's access our website using HTTPS protocol, you should able to it is marked as secure by browsers. More important, the certificate will be auto renewed when is expired.
+Now, let's access our website using HTTPS protocol, you should able to it is marked as secure by browsers. More important, the certificate will be auto renewed when is expired!
     {% asset_img 13.png IE11%}
     {% asset_img 14.png Chrome%}
 
