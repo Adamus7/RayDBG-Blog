@@ -1,7 +1,7 @@
-<!doctype html>
+<!DOCTYPE html>
 
 {% set html_class = 'theme-next ' + theme.scheme %}
-{% if theme.use_motion %}
+{% if theme.motion.enable %}
   {% set html_class = html_class + ' use-motion' %}
 {% endif %}
 
@@ -9,18 +9,17 @@
 <head>
   {% include '_partials/head.swig' %}
   <title>{% block title %}{% endblock %}</title>
+  {% include '_third-party/analytics/index.swig' %}
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="{{ page.lang || page.language || config.language }}">
-
-  {% include '_third-party/analytics/index.swig' %}
 
   {% set container_class = "container " %}
   {% if theme.sidebar.position %}
     {% set container_class = container_class + 'sidebar-position-' + theme.sidebar.position %}
   {% endif %}
 
-  <div class="{{ container_class }} {% block page_class %}{% endblock %} ">
+  <div class="{{ container_class }} {% block page_class %}{% endblock %}">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -45,7 +44,7 @@
     <footer id="footer" class="footer">
       <div class="footer-inner">
         {% include '_partials/footer.swig' %}
-        {% include '_third-party/analytics/busuanzi-counter.swig' %}
+        {% include '_third-party/analytics/analytics-with-widget.swig' %}
         {% block footer %}{% endblock %}
       </div>
     </footer>
@@ -67,9 +66,7 @@
   {% set scheme_script = '_scripts/schemes/' + theme.scheme | lower + '.swig' %}
   {% include scheme_script %}
 
-  {% block script_extra %}
-    {% include '_scripts/pages/post-details.swig' %}
-  {% endblock %}
+  {% block script_extra %}{% endblock %}
 
   {% include '_scripts/boostrap.swig' %}
 
