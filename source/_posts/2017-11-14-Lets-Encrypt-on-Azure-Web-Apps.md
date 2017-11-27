@@ -27,37 +27,37 @@ Both of these should be set to an Azure Storage Account connection string, e.g. 
 ## Configure Service Principal for Azure Let's Encrypt extension
 Service Principal is Azure AD concept which just like a service account that allow specific application to access your Azure resources. Our extension need a service principal to get the permission to access the resources to renew and install the certificate.
 ### Create a Service Principal though the portal
-1.  Login to Azure Portal
-2.  Navigate to `Azure Active Directory` -> `App Registrations`, click `New application registration`
-    {% asset_img 03.png %}
-3.  Fill in name of the application and select `WEB APP/API` and click the next button. For `SIGN-ON URL`, provide the URI to a web-site that describes your application. The existence of the website is not validated. You can use the url to the web app you want SSL on.
+Login to Azure Portal
+Navigate to `Azure Active Directory` -> `App Registrations`, click `New application registration`
+{% asset_img 03.png %}
+Fill in name of the application and select `WEB APP/API` and click the next button. For `SIGN-ON URL`, provide the URI to a web-site that describes your application. The existence of the website is not validated. You can use the url to the web app you want SSL on.
 Click Create
     {% asset_img 04.png %}
 ### Get the Application ID and create a secret
-1.  The service principal is uniquely identified by its `Application ID`. To get that, select the newly created application.
-2.  You should see the `Application ID` in details page. Then click on `Keys` in settings page.
-    {% asset_img 05.png %}
-3.  Create a new Password (secret key). Copy the key value.
-    {% asset_img 06.png %}
+The service principal is uniquely identified by its `Application ID`. To get that, select the newly created application.
+You should see the `Application ID` in details page. Then click on `Keys` in settings page.
+{% asset_img 05.png %}
+Create a new Password (secret key). Copy the key value.
+{% asset_img 06.png %}
 
 So now you should have 
 *   `Application ID`
 *   `Secret Key`
 
 ### Grant permission to the Service Principal
-1.  Navigate to your resource group for you App Service and App Service Plan
-2.  Click the `Access control(IAM)` -> `Add`
-    {% asset_img 07.png %}
-3.  Add `Contributor` role to your Service Principal
-    {% asset_img 08.png %}
+Navigate to your resource group for you App Service and App Service Plan
+Click the `Access control(IAM)` -> `Add`
+{% asset_img 07.png %}
+Add `Contributor` role to your Service Principal
+{% asset_img 08.png %}
 
 ## Setup Let's Encrypt
 Now let's install and configure Let's Encrypt extension and  
 
 ### Install Let's Encrypt extension
-1.  Open your site's SCM page (`https://{your site name}.scm.azurewebsites.net`).
-2.  In Site extension page, search Azure Let's Encrypt. Click `+` to install it for your application.
-3.  Once the site extension has finished installing, you'll be required to restart the site. After the restart, click the triangle Launch button that replaced the extension's install button.
+Open your site's SCM page (`https://{your site name}.scm.azurewebsites.net`).
+In Site extension page, search Azure Let's Encrypt. Click `+` to install it for your application.
+Once the site extension has finished installing, you'll be required to restart the site. After the restart, click the triangle Launch button that replaced the extension's install button.
 
 ### Configure Azure Let's Encrypt
 The first page of the site contains the following fields that must be provided by you. You can either fill them out from the site extension or you can set the properties as app settings. 
@@ -87,7 +87,7 @@ Now, let's access our website using HTTPS protocol, you should able to it is mar
     {% asset_img 14.png Chrome%}
 
 # One more step
-Wait! Don't forget to redirect HTTP request to HTTPS request!
+Wait! Don't forget to redirect HTTP request to HTTPS!
 You can do it in many ways. I just added a redirect rule in web.config as below
     {% codeblock lang:xml %}
     <configuration xmlns="http://schemas.microsoft.com/.NetConfiguration/v2.0">
