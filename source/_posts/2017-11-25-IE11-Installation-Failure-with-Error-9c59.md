@@ -34,7 +34,7 @@ Probably 50% of IE 11 installation failure will see a similar pattern below in I
 05:12.766: INFO:    Unable to remove directory C:\Windows\TEMP\IE17934.tmp, marking for deletion on reboot.
 05:12.766: INFO:    Released Internet Explorer Installer Mutex
 {% endcodeblock %}
-The setup exit code: 0x00009C59 (40025) means USER_ERROR_NEUTRAL_CAB_INSTALL_FAILED. Ref: https://docs.microsoft.com/en-us/internet-explorer/ie11-deploy-guide/setup-problems-with-ie11
+The setup exit code: `0x00009C59 (40025)` means [USER_ERROR_NEUTRAL_CAB_INSTALL_FAILED](https://docs.microsoft.com/en-us/internet-explorer/ie11-deploy-guide/setup-problems-with-ie11)
 
 Then you might see a similar error pattern in CBS.log as below:
 {% codeblock %}

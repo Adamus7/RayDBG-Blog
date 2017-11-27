@@ -11,12 +11,12 @@ Use the following procedure to deploy sample wired authentication settings to NA
 2.	Create a new Group Policy Object or choose an existing Group Policy Object.
 3.	Edit the GPO
     {% asset_img 01.png %}
-4.	In Group Policy Management Editor, navigate to **Computer Configuration -> Policies -> Windows Settings -> Security Settings -> System Services -> Wired AutoConfig**
+4.	In Group Policy Management Editor, navigate to `Computer Configuration` -> `Policies` -> `Windows Settings` -> `Security Settings` -> `System Services` -> `Wired AutoConfig`
 Then check Define this policy setting and choose Automatic.
 Click Ok to save the configuration.
     {% asset_img 02.png %}
-5.	Navigate to Computer **Configuration -> Policies -> Windows Settings -> Security Settings -> Wired Network (IEEE 802.3) Policies**.
-Right click on the right panel and click Create A New Wired Network Policy for Windows Vista and Later Relases.
+5.	Navigate to Computer `Configuration` -> `Policies` -> `Windows Settings` -> `Security Settings` -> `Wired Network (IEEE 802.3) Policies`.
+Right click on the right panel and click Create A New Wired Network Policy for Windows Vista and Later Release.
     {% asset_img 03.png %}
 6.	Give a name and description for this policy on General tab.
     {% asset_img 04.png %}
@@ -25,8 +25,8 @@ Right click on the right panel and click Create A New Wired Network Policy for W
     Select authentication Mode: User or Computer authentication
     Click Properties for more details
     {% asset_img 05.png %}
-    Select “User a certificate on this computer” and “Use simple certificate selection (Recommended)
-    Select “Verify the server’s identity by validating the certificate”. In the Trusted Root Certificate Authorities: Select the “SP Root Certification Authority” with latest expiry Date if multiple “SP Root Certificate Authority” certificates are found on the notebook. 
+    Select `User a certificate on this computer` and `Use simple certificate selection (Recommended)`
+    Select `Verify the server’s identity by validating the certificate`. In the Trusted Root Certificate Authorities: Select the `SP Root Certification Authority` with latest expiry Date if multiple `SP Root Certificate Authority` certificates are found on the notebook. 
     Click OK
     {% asset_img 06.png %}
     Click Ok

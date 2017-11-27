@@ -20,54 +20,54 @@ However, the process of acquiring an TLS/SSL certification and enable HTTPS prot
 # Setup
 
 ## Configure Azure Web Jobs Connection string
-Azure Let's Encrypt extension requires a web job to renew the certificate once it expires every 3 months. Therefore, you need to add the two Connection strings **AzureWebJobsDashboard** and **AzureWebJobsStorage** to your Azure Web App.
-Both of these should be set to an Azure Storage Account connection string, e.g. *DefaultEndpointsProtocol=https;AccountName=[myaccount];AccountKey=[mykey]*; Be sure that the connection string doesn't end with EndpointSuffix=core.windows.net as the extension will not work then.
+Azure Let's Encrypt extension requires a web job to renew the certificate once it expires every 3 months. Therefore, you need to add the two Connection strings `AzureWebJobsDashboard` and `AzureWebJobsStorage` to your Azure Web App.
+Both of these should be set to an Azure Storage Account connection string, e.g. `DefaultEndpointsProtocol=https;AccountName=[myaccount];AccountKey=[mykey]`; Be sure that the connection string doesn't end with `EndpointSuffix=core.windows.net` as the extension will not work then.
 {% asset_img 02.png %}
 
 ## Configure Service Principal for Azure Let's Encrypt extension
 Service Principal is Azure AD concept which just like a service account that allow specific application to access your Azure resources. Our extension need a service principal to get the permission to access the resources to renew and install the certificate.
 ### Create a Service Principal though the portal
 1.  Login to Azure Portal
-2.  Navigate to Azure Active Directory -> App Registrations, click New application registration
+2.  Navigate to `Azure Active Directory` -> `App Registrations`, click `New application registration`
     {% asset_img 03.png %}
-3.  Fill in name of the application and select WEB APP/API and click the next button. For SIGN-ON URL, provide the URI to a web-site that describes your application. The existence of the website is not validated. You can use the url to the web app you want SSL on.
+3.  Fill in name of the application and select `WEB APP/API` and click the next button. For `SIGN-ON URL`, provide the URI to a web-site that describes your application. The existence of the website is not validated. You can use the url to the web app you want SSL on.
 Click Create
     {% asset_img 04.png %}
 ### Get the Application ID and create a secret
-1.  The service principal is uniquely identified by its Application ID. To get that, select the newly created application.
-2.  You should see the Application ID in details page. Then click on Keys in settings page.
+1.  The service principal is uniquely identified by its `Application ID`. To get that, select the newly created application.
+2.  You should see the `Application ID` in details page. Then click on `Keys` in settings page.
     {% asset_img 05.png %}
 3.  Create a new Password (secret key). Copy the key value.
     {% asset_img 06.png %}
 
 So now you should have 
-*   **Application ID**
-*   **Secret Key**
+*   `Application ID`
+*   `Secret Key`
 
 ### Grant permission to the Service Principal
 1.  Navigate to your resource group for you App Service and App Service Plan
-2.  Click the Access control(IAM) -> Add
+2.  Click the `Access control(IAM)` -> `Add`
     {% asset_img 07.png %}
-3.  Add Contributor role to your Service Principal
+3.  Add `Contributor` role to your Service Principal
     {% asset_img 08.png %}
 
 ## Setup Let's Encrypt
 Now let's install and configure Let's Encrypt extension and  
 
 ### Install Let's Encrypt extension
-1.  Open your site's SCM page (*https://{your site name}.scm.azurewebsites.net*).
-2.  In Site extension page, search Azure Let's Encrypt. Click + to install it for your application.
+1.  Open your site's SCM page (`https://{your site name}.scm.azurewebsites.net`).
+2.  In Site extension page, search Azure Let's Encrypt. Click `+` to install it for your application.
 3.  Once the site extension has finished installing, you'll be required to restart the site. After the restart, click the triangle Launch button that replaced the extension's install button.
 
 ### Configure Azure Let's Encrypt
 The first page of the site contains the following fields that must be provided by you. You can either fill them out from the site extension or you can set the properties as app settings. 
->   **Tenant** - is the tenant name of the Azure AD that the service principal was created in, e.g. yourdomain.onmicrosoft.com
->   **SubscriptionId** - is the subscription id that the resource groups belongs to. You get the ID from https://portal.azure.com/#blade/Microsoft_Azure_Billing/SubscriptionsBlade
->   **ClientId** - is the client id of the application/service principal you created
->   **ClientSecret** - is the password/key you created for the service principal
->   **ResourceGroupName** - is the name of the resource group that the App Service is located in 
->   **ServicePlanResourceGroupName** - is the name of the resource group that the App Service Plan is located in, e.i. if you are hosting everything in the same resource group ServicePlanResourceGroupName should equal ResourceGroupName
->   **Update Application Settings** - set this to true to save the setting as web application settings, this is required if you didn't already add the settings as web app settings, so the values are available for the renew certificate web job later.
+>   `Tenant` - is the tenant name of the Azure AD that the service principal was created in, e.g. yourdomain.onmicrosoft.com
+>   `SubscriptionId` - is the subscription id that the resource groups belongs to. You get the ID from https://portal.azure.com/#blade/Microsoft_Azure_Billing/SubscriptionsBlade
+>   `ClientId` - is the client id of the application/service principal you created
+>   `ClientSecret` - is the password/key you created for the service principal
+>   `ResourceGroupName` - is the name of the resource group that the App Service is located in 
+>   `ServicePlanResourceGroupName` - is the name of the resource group that the App Service Plan is located in, e.i. if you are hosting everything in the same resource group ServicePlanResourceGroupName should equal ResourceGroupName
+>   `Update Application Settings` - set this to true to save the setting as web application settings, this is required if you didn't already add the settings as web app settings, so the values are available for the renew certificate web job later.
     
 {% asset_img 10.png %}
 
@@ -75,7 +75,7 @@ The first page of the site contains the following fields that must be provided b
 Before you can request a Let's Encrypt certificate for the web app, you need to register a custom domain name. Once a domain name is registered you should see something similar to this:
     {% asset_img 11.png %}
 ### Request and Install certificate
-Click **Next** on previous page to proceed the process to request the certificate.
+Click `Next` on previous page to proceed the process to request the certificate.
 Select which hostname you want to request certificates for and provide your email address.
 Click Request and install certificates.
     {% asset_img 12.png %}

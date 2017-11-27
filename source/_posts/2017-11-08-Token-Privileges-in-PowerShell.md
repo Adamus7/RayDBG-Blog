@@ -13,7 +13,7 @@ A **privileges** is the right of an account, such as a user or group account, to
 So when you get the permission error, it doesn’t mean that you can’t do it – just that you need to enable the privilege before doing it.
 
 # Solution
-Windows provied a API, [AdjustTokenPrivileges](https://msdn.microsoft.com/en-us/library/windows/desktop/aa375202.aspx), to adjust the privileges in the specified access token.
+Windows provided a API, [AdjustTokenPrivileges](https://msdn.microsoft.com/en-us/library/windows/desktop/aa375202.aspx), to adjust the privileges in the specified access token.
 Here is an example, I would like to delete some registry key under [HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Component Based Servicing\Packages\]. If I ran the command Remove-Item to delete it, probably it will be denied by the OS.
 So I need call the API to manipulate the privileges before calling Remove-Item.
 Here is sample script:

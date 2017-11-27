@@ -9,13 +9,13 @@ Recently, one of IE KB bring a print issue to IE 11 on different versions of Win
 <!-- more --> 
 # Before Windows 10
 From Oct 2016, a new patch releasing model, *Rollup Model*, was introduced to the family of Windows 7SP1/2008R2, Windows 8.1 and Windows 2012/R2 by Microsoft. Later, starting with February 2017, Microsoft decided to exclude the Cumulative Security Update for Internet Explorer from Security Only updates. Meanwhile, there will be a standalone patch for IE will be released every month. So now, normally, you should see 4 different types of patch in one month:
-* **Security Monthly Quality Update** (aka the *Monthly Rollup*)
+* `Security Monthly Quality Update` (aka the `Monthly Rollup`)
     IE CU + Security and Non-Security fixes in this month + all fixes in previous months
-* **Security Only Quality Update** (aka the *Security Only updates*)
+* `Security Only Quality Update` (aka the `Security Only updates`)
     Security fix in this month                                                          
-* **Preview of Monthly Quality Rollup** (aka the *Preview Rollup*)
+* `Preview of Monthly Quality Rollup` (aka the `Preview Rollup`)
     Non-Security fixes in this month +  all fixes in previous months                    
-* **Cumulative Security Update for Internet Explorer** (aka the *CU for IE*)
+* `Cumulative Security Update for Internet Explorer` (aka the `CU for IE`)
     Fixes for IE                                                                        
     
 Here is an diagram which can illustrate the relationship between different updates:
