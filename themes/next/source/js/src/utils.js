@@ -323,7 +323,7 @@ $(document).ready(function () {
 
     // Initialize Sidebar & TOC Width.
     var scrollbarWidth = NexT.utils.getScrollbarWidth();
-    $('.site-overview, .post-toc').css('width', 'calc(100% + ' + scrollbarWidth + 'px)');
+    //$('.site-overview, .post-toc').css('width', 'calc(100% + ' + scrollbarWidth + 'px)');
   }
 
   function updateSidebarHeight (height) {
