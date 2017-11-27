@@ -64,8 +64,7 @@ Then you might see a similar error pattern in CBS.log as below:
 2017-11-24 14:07:40, Info                  CBS    SQM: Ignoring upload request because the sample type is not enabled: Standard
 2017-11-24 14:07:40, Info                  CBS    Enabling LKG boot option
 {% endcodeblock %}
-The installation failed start at
-Exec: Staging Package: Package_3_for_KB2706045~31bf3856ad364e35~amd64~~6.1.1.0.
+The installation failed start at `Exec: Staging Package: Package_3_for_KB2706045~31bf3856ad364e35~amd64~~6.1.1.0.`
 That means one package of KB2706045 is corrupted for some reasons.
 
 ## Solution
