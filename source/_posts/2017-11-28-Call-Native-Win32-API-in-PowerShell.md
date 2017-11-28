@@ -29,7 +29,7 @@ BOOL WINAPI SystemParametersInfo(
 
 # Add-Type
 [Add-Type](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/add-type?view=powershell-5.1) is a cmdlet allow us to extend PowerShell session with .Net Framework type (a class).
-There is a example about how to call native Windows APIs in the document:
+There is an example about how to call native Windows APIs in the document:
 ```PowerShell
 PS C:\> $Signature = @"
 [DllImport("user32.dll")]public static extern bool ShowWindowAsync(IntPtr hWnd, int nCmdShow);
@@ -47,7 +47,7 @@ $ShowWindowAsync::ShowWindowAsync((Get-Process -Id $Pid).MainWindowHandle, 4)
 
 # Solution
 First, use Add-Type to introduce the specific function into PowerShell session.
-Second, call the API in your code. You can pass the parameters either in nave code block or PowerShell code block.
+Second, call the API in your code. You can pass the parameters either in native code block or PowerShell code block.
 ```PowerShell
 function Update-UserPreferencesMask {
     $Signature = @"
