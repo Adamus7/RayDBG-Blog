@@ -21,7 +21,7 @@ There are some logs can help you to dig into this error:
 *   %windir%\Logs\DISM\DISM.log
 
 # A typical failure with error code 9c59 in IE11_main.log
-Probably 50% of IE 11 installation failure will see a similar pattern below in IE11_mail.log:
+Probably 50% of IE 11 installation failure has a similar pattern in IE11_mail.log as below:
 {% codeblock %}
 04:36.262: INFO:    Waiting for Active Setup to complete. ({A509B1A8-37EF-4b3f-8CFC-4F3A74704073})
 04:41.269: INFO:    Waiting for Active Setup to complete. ({A509B1A8-37EF-4b3f-8CFC-4F3A74704073})
