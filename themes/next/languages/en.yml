@@ -19,7 +19,7 @@ menu:
 
 sidebar:
   overview: Overview
-  toc: Contents
+  toc: Table of Contents
 
 post:
   created: Post created
@@ -95,3 +95,5 @@ reward:
   wechatpay: WeChat Pay
   alipay: Alipay
   bitcoin: Bitcoin
+
+gitmentbutton: Show comments from Gitment
