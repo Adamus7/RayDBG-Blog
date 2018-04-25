@@ -6,7 +6,7 @@ tags:
 - Skype for Business
 ---
 A common scenario in BOT world is you want to notify something or send some message to a backend agent proactively. The [official domo](https://docs.microsoft.com/en-us/azure/bot-service/dotnet/bot-builder-dotnet-proactive-messages) of Microsoft Bot demonstrate how to achieve that. But the conversation is initiated by the user, not start from the Bot.
-Skype for Business published a [document](https://msdn.microsoft.com/en-us/skype/skype-for-business-bot-framework/docs/overview) about its Bot Framework. In this doc, they mentioned how to creating outbound bots using C# Bot Builder SDK. However, the sample code is incomplete which is confusing. 
+Skype for Business published a [document](https://msdn.microsoft.com/en-us/skype/skype-for-business-bot-framework/docs/overview) about its Bot Framework. In this doc, they mentioned how to create outbound bots using C# Bot Builder SDK. However, the sample code is incomplete and doesn't tell us how to send a message to the converstain.
 <!-- more -->
 Prerequisite：
 *   A Bot service with Skype for Business channel enabled.
