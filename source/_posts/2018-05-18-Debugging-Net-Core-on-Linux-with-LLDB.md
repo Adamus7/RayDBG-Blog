@@ -39,10 +39,12 @@ On Linux, the SOS plugin shipped with .Net Core SDK, you can find it here: _/usr
 ## Attach to a process
 Find the pid of the dotnet application, then launch LLDB and type: `process attach -p <PID>` to attach the debugger to your dotnet core application.
 Once LLDB is attached, the output will show all the frames from the currently selected thread, but it only will show the native frames.
+{% asset_img appach-to-a-process.png 500 %}
 
 ## Loading SOS plugin
 At the LLDB prompt, type: `plugin load libsosplugin.so`.
 Then type: `clrstack`. You will see clearly what managed code is being executed for that thread.
+{% asset_img load-sos-plugin.png 500 %}
 
 ## Capture Core Dumps by ProcDump for Linux
 As with any debug session that involves production running applications, it is not a first choice to live attaching to the process. Similar to Windows, Linux utilizes a approach to postmortem debugging with core dumps (memory dump).
