@@ -12,7 +12,7 @@ Actually, we can do similar things on Linux for .Net Core application now.
 # Tools
 Simply, here is a cheat sheet of the different tools on Windows and Linux:
 
-|                   |Windows            | Linux         |
+|                   | Linux             | Windows       |
 | ----------------- | ----------------- | ------------- |
 | CPU sampling      | perf, BCC         | ETW           |
 | Dynamic tracing   | perf, BCC         | X             |
