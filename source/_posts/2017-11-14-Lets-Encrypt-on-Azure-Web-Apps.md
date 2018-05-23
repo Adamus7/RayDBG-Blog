@@ -9,7 +9,7 @@ tags:
 HTTPS (Hyper Text Transfer Protocol Secure) is the secure version of HTTP which allowing all communications between your browser and the website are encrypted. HTTPS offers an extra layer of security because it uses SSL to transfer data. Web browsers such as Internet Explorer, Edge and Chrome will display a **padlock** icon in the address bar to visually indicate that a HTTPS connection is in effect.
 However, the process of acquiring an TLS/SSL certification and enable HTTPS protocol has never been easy. You have to pay extra money for a certificates every year and deal with a lot of detail settings. **Let's Encrypt**, a new certificate authority, provide a simple and free process of manual certificate creation, validation, singing, installation and renewal. Please note, the free Let's Encrypt certificate will be expired in 3 months, which means you need a process to periodically renew the certificate if you choose it. In this blog, I would like to document how I apply HTTPS on my Azure Web App with Let's Encrypt and enable auto certificate renewal.
 <!-- more -->
-# Pre story
+# The Story
 [Add support for free SSL certs like those from Let's Encrypt](https://feedback.azure.com/forums/169385-web-apps-formerly-websites/suggestions/6737285-add-support-for-free-ssl-certs-like-those-from-let) is a high votes feature on Azure Web App for a long time. It is resolved by community that Simon published a Azure Site extension, [Azure Let's Encrypt](http://www.siteextensions.net/packages/letsencrypt), for easy install and renewals of Let's Encrypt SSL certificates.
 
 # Prerequisites
