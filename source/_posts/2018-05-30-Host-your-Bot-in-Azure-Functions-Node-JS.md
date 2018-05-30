@@ -72,7 +72,7 @@ Publish the code to Azure Functions by [Azure Func CLI](https://github.com/Azure
 Enjoy it.
 
 ## More words
-Ideally, there should be a script or a feature of Azure Functions to help users auto package the JS code on the air, just like what they have done for C#.
+Ideally, there should be a script or a trigger function of Azure Functions to help users package the JS code automatically on the air once there is any code change, just like what they have done for C#.
 
 
 
