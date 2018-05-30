@@ -6,8 +6,8 @@ tags:
 - Node.JS
 - Microsoft Bot Framework
 ---
-Microsoft published its serverless computing solution in Azure in 2016, [Azure Functions](https://azure.microsoft.com/en-us/services/functions/). By leveraging Azure Functions, developers are able to build HTTP-based API endpoints accessible by a wide range of applications while no need to care about the platform or server configurations. Azure Bot Service also has a new family member, Azure Function Bot, which is based on Azure Functions.
-Prashant has publish a [blog](https://azure.microsoft.com/en-us/blog/announcing-general-availability-of-azure-functions/) about how to create Function Bot with C#. But it seems that there is some difference if you choose Node.JS to build you Function Bot.
+Microsoft published its serverless computing solution in 2016, [Azure Functions](https://azure.microsoft.com/en-us/services/functions/). By leveraging Azure Functions, developers are able to build HTTP-based API endpoints accessible by a wide range of applications while no need to care about the platform or server configurations. Azure Bot Service also has a new family member, Azure Function Bot, which is based on Azure Functions.
+*Prashant* has published a [blog](https://azure.microsoft.com/en-us/blog/announcing-general-availability-of-azure-functions/) about how to create Function Bot with C#. But it seems that there is some difference if you choose Node.JS to build you Function Bot.
 <!-- more -->
 # Create a Function Bot
 Let us start from the official templet. Create a new Function Bot with Node.JS:
@@ -21,7 +21,7 @@ Similar to Web App Bot, you can go through and edit your code by clicking `Open 
 {% asset_img open-in-azure-functions.png 800 %}
 {% asset_img open-in-azure-functions-2.png 800 %}
 But looking at above code in Functions, it is quite complex and does not look like a simple Bot application. 
-Actually, the body code of your Bot is save in index.js:
+Actually, the body code of your Bot is saved in index.js:
 {% asset_img index.js.png 800 %}
 But you may find that any changes of index.js here wouldn't take any effect in your Bot. 
 ## What happens?
