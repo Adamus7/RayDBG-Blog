@@ -6,10 +6,10 @@ tags:
 - .NET Core
 - LeetCode
 ---
-I always like to practice coding skills and algorithm on [LeetCode](leetcode.com). Since I'm not a genius who can write code on white paper and debug the code on the air, a local test before submitting the code is really important to me. So, everytime, I need to read the descriptions of the problem on LeetCode, create a local project with a main function, implement a class with functions for the problem, create test inputs and check the output manually. It is terrible because I have to repeat those steps every time. In this article, I would like to introduce how I solved the above problem with .NET Core, XUnit and PowerShell Scripts.
+I always like to practice coding skills and algorithm on [LeetCode](leetcode.com). Since I'm not a genius who can write code on white paper and debug the code on the air, a local test before submitting the code is really important to me. So, every time, I need to read the descriptions of the problem on LeetCode, create a local project with a main function, implement a class with functions for the problem, create test inputs and check the output manually. It is terrible because I have to repeat those steps every time. In this article, I would like to introduce how I solved the above problem with .NET Core, XUnit and PowerShell Scripts.
 <!-- more -->
 # Get the problem from LeetCode
-[Haoel](https://github.com/haoel/leetcode) shared a batch script on GitHub which can retrieve description of a problem from LeetCode and help to generate corresponding C++ class file with comments. [Codeyu](https://github.com/codeyu/LeetCode/tree/master/Scripts) forked it and reimpelemented it for .NET with PowerShell. What's more, in Codeyu's script, a test class for XUnit will be generated together! It is easy to use, run PowerShell command as:
+[Haoel](https://github.com/haoel/leetcode) shared a batch script on GitHub which can retrieve description of a problem from LeetCode and help to generate corresponding C++ class file with comments. [Codeyu](https://github.com/codeyu/LeetCode/tree/master/Scripts) forked it and re-implemented it for .NET with PowerShell. What's more, in Codeyu's script, a test class for XUnit will be generated together! It is easy to use, run PowerShell command as:
 {% codeblock lang:powershell %}
 PS /Users/github/MyLeetCode> ./auto.ps1 https://leetcode.com/problems/next-permutation/
 {% endcodeblock %}
