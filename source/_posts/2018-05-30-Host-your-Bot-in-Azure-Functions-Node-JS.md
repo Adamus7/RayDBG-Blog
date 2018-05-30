@@ -52,7 +52,7 @@ Azure Function Bot templates use [Azure Functions Pack](https://github.com/Azure
 }
 
 ```
-Now the question is how could I start editing the code of my Bot as `../.funcpack/index.js` is a fully packaged 
+Now the question is how could I start editing the code of my Bot as `../.funcpack/index.js` is fully packaged?
 ## Workaround
 Since we know the executable script is packaged by `funcpack`, we can download the source code to a local folder and edit the Bot code locally, then pack the code by `funcpack` and upload them to Azure Functions.
 {% asset_img download-source-code-1.png 500 %}
