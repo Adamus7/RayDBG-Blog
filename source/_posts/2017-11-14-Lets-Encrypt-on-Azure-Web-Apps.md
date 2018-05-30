@@ -7,25 +7,25 @@ tags:
 - Let's Encrypt
 ---
 HTTPS (Hyper Text Transfer Protocol Secure) is the secure version of HTTP which allowing all communications between your browser and the website are encrypted. HTTPS offers an extra layer of security because it uses SSL to transfer data. Web browsers such as Internet Explorer, Edge and Chrome will display a **padlock** icon in the address bar to visually indicate that a HTTPS connection is in effect.
-However, the process of acquiring an TLS/SSL certification and enable HTTPS protocol has never been easy. You have to pay extra money for a certificates every year and deal with a lot of detail settings. **Let's Encrypt**, a new certificate authority, provide a simple and free process of manual certificate creation, validation, singing, installation and renewal. Please note, the free Let's Encrypt certificate will be expired in 3 months, which means you need a process to periodically renew the certificate if you choose it. In this blog, I would like to document how I apply HTTPS on my Azure Web App with Let's Encrypt and enable auto certificate renewal.
+However, the process of acquiring an TLS/SSL certification and enable HTTPS protocol has never been easy. You have to pay extra money for a certificates every year and deal with a lot of detail settings. **Let's Encrypt**, a new certificate authority, provide a simple and free process of manual certificate creation, validation, singing, installation and renewal. However, the free Let's Encrypt certificate will be expired in 3 months, which means you need a process to periodically renew the certificate if you choose it. In this blog, I would like to document how I apply HTTPS on my Azure Web App with Let's Encrypt and enable auto certificate renewal.
 <!-- more -->
-# Pre story
-[Add support for free SSL certs like those from Let's Encrypt](https://feedback.azure.com/forums/169385-web-apps-formerly-websites/suggestions/6737285-add-support-for-free-ssl-certs-like-those-from-let) is a high votes feature on Azure Web App for a long time. It is resolved by community that Simon published a Azure Site extension, [Azure Let's Encrypt](http://www.siteextensions.net/packages/letsencrypt), for easy install and renewals of Let's Encrypt SSL certificates.
+# The Story
+[Add support for free SSL certs like those from Let's Encrypt](https://feedback.azure.com/forums/169385-web-apps-formerly-websites/suggestions/6737285-add-support-for-free-ssl-certs-like-those-from-let) is a high votes feature on Azure Web App for a long time. It is resolved by community that Simon published a Azure Site extension, [Azure Let's Encrypt](http://www.siteextensions.net/packages/letsencrypt), for easy install and renewal of Let's Encrypt SSL certificates.
 
 # Prerequisites
-* Make sure that you Scale Up your App Service Plan allows SNI (Server Name Indication) and Custom Domains / SSL
+* Make sure that your App Service Plan allows SNI (Server Name Indication) and Custom Domains / SSL
 {% asset_img 01.png %}
 * A custom domain name.
 
 # Setup
 
 ## Configure Azure Web Jobs Connection string
-Azure Let's Encrypt extension requires a web job to renew the certificate once it expires every 3 months. Therefore, you need to add the two Connection strings `AzureWebJobsDashboard` and `AzureWebJobsStorage` to your Azure Web App.
+Azure Let's Encrypt extension requires a web job to renew the certificate once it is expired after 3 months. Therefore, you need to add the two Connection Strings `AzureWebJobsDashboard` and `AzureWebJobsStorage` to your Azure Web App to host the web job.
 Both of these should be set to an Azure Storage Account connection string, e.g. `DefaultEndpointsProtocol=https;AccountName=[myaccount];AccountKey=[mykey]`; Be sure that the connection string doesn't end with `EndpointSuffix=core.windows.net` as the extension will not work then.
 {% asset_img 02.png %}
 
 ## Configure Service Principal for Azure Let's Encrypt extension
-Service Principal is Azure AD concept which just like a service account that allow specific application to access your Azure resources. Our extension need a service principal to get the permission to access the resources to renew and install the certificate.
+Service Principal is Azure AD concept which just like a service account that allow specific application to access your Azure resources. The extension need a service principal to get the permission to access the resources to renew and install the certificate.
 ### Create a Service Principal though the portal
 Login to Azure Portal
 Navigate to `Azure Active Directory` -> `App Registrations`, click `New application registration`
@@ -72,17 +72,17 @@ The first page of the site contains the following fields that must be provided b
 {% asset_img 10.png %}
 
 ### Verify Hostnames
-Before you can request a Let's Encrypt certificate for the web app, you need to register a custom domain name. Once a domain name is registered you should see something similar to this:
+Before you can request a Let's Encrypt certificate for the web app, you need to register a custom domain name for you application Once a domain name is registered you should see something similar to this:
     {% asset_img 11.png %}
 ### Request and Install certificate
 Click `Next` on previous page to proceed the process to request the certificate.
 Select which hostname you want to request certificates for and provide your email address.
 Click Request and install certificates.
     {% asset_img 12.png %}
-Wait a little, while the certificate gets requested and installed and assigned to your domain.
+Wait a few seconds, the certificate will get requested and assigned to your domain.
 
 # Done!
-Now, let's access our website using HTTPS protocol, you should able to it is marked as secure by browsers. More important, the certificate will be auto renewed when is expired!
+Now, let's access our website using HTTPS protocol, you should able to see it is marked as secure by browsers. More importantly, the certificate will be auto renewed when is expired!
     {% asset_img 13.png IE11%}
     {% asset_img 14.png Chrome%}
 
