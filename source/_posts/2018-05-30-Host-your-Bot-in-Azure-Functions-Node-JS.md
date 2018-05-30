@@ -1,5 +1,5 @@
 ---
-title: Host the Bot in Azure Functions (Node.JS)
+title: Host Your Bot in Azure Functions (Node.JS)
 date: 2018-05-30 11:11:39
 tags:
 - Azure Functions
