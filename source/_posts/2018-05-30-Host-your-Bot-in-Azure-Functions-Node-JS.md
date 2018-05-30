@@ -7,9 +7,9 @@ tags:
 - Microsoft Bot Framework
 ---
 Microsoft released its serverless computing solution, [Azure Functions](https://azure.microsoft.com/en-us/services/functions/), for easily running small pieces of business logic, or functions, in the cloud. By leveraging Azure Functions, developers are able to build HTTP-based API endpoints accessible by a wide range of applications while no need to care about the platform or server configurations. Later year, Azure Bot Service got a new family member, Azure Function Bot, which is based on Azure Functions.
-Prashant has published a [blog](https://azure.microsoft.com/en-us/blog/announcing-general-availability-of-azure-functions/) about how to create Function Bot with C#. But it seems that there is some differences if you choose Node.JS to build and deploy your Function Bot.
+Prashant has published a [blog](https://azure.microsoft.com/en-us/blog/announcing-general-availability-of-azure-functions/) about how to create Function Bot with C#. But it seems that there is some tricks to build and deploy your Function Bot.
 <!-- more -->
-*Note*:I assume you have worked on Web App Bot before or have basic knowledge about Microsoft Bot Framework and Azure Functions.
+*Note*: I assume you have worked on Web App Bot before or have basic knowledge about Microsoft Bot Framework and Azure Functions.
 # Create a Function Bot
 Let us start from the official templet. Creating a new Function Bot with Node.JS is quite easy in Azure portal:
 {% asset_img create-a-new-function-bot.png 500 %}
