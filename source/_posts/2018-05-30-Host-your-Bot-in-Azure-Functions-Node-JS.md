@@ -52,6 +52,7 @@ Azure Function Bot templates use [Azure Functions Pack](https://github.com/Azure
 }
 
 ```
+Now the question is how could I start editing the code of my Bot as `../.funcpack/index.js` is a fully packaged 
 ## Workaround
 Since we know the executable script is packaged by `funcpack`, we can download the source code to a local folder and edit the Bot code locally, then pack the code by `funcpack` and upload them to Azure Functions.
 {% asset_img download-source-code-1.png 500 %}
@@ -68,7 +69,7 @@ info: Generating project files/metadata
 info: Webpacking project
 info: Complete!
 ```
-Publish the code to Azure Functions by [Azure Func CLI](https://github.com/Azure/azure-functions-core-tools): `func azure functionapp publish <your app name>`. Or simply, copy the contents of `.funcpack\index.js` and paste them to the `messages`.
+Publish the code to Azure Functions by [Azure Func CLI](https://github.com/Azure/azure-functions-core-tools): `func azure functionapp publish <your app name>`. Or simply, copy the contents of `.funcpack\index.js` and paste them to the `messages`. Or upload the script to the Auzre Functions directly. Please note, when uploading your files, you need to include the single `.funcpack` directory (in the Functions App root), but you don't need your `node_modules` directory.
 Enjoy it.
 
 ## More words
