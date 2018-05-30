@@ -61,15 +61,15 @@ Open the source code locally with you preferred IDE.
 {% asset_img bot-src.png 500 %}
 Install `funcpack`: `npm install -g azure-functions-pack`.
 Install the dependence (botbuiler) by running `npm install` inside `messages` folder.
-Edit the code of your Bot in `messages\index.js`.
-Package the code by running `funcpack pack ./` inside `bot-src`:
+Edit the code of the Bot under `messages\index.js` which just contains your Bot logic.
+Then package the code by running `funcpack pack ./` in `bot-src`:
 ```
 PS ..\NodeJSFuncBot-src\bot-src> funcpack pack ./
 info: Generating project files/metadata
 info: Webpacking project
 info: Complete!
 ```
-Publish the code to Azure Functions by [Azure Func CLI](https://github.com/Azure/azure-functions-core-tools): `func azure functionapp publish <your app name>`. Or simply, copy the contents of `.funcpack\index.js` and paste them to the `messages`. Or upload the script to the Auzre Functions directly. Please note, when uploading your files, you need to include the single `.funcpack` directory (in the Functions App root), but you don't need your `node_modules` directory.
+At last, publish your code to Azure Functions by [Azure Func CLI](https://github.com/Azure/azure-functions-core-tools): `func azure functionapp publish <your app name>`. Or simply, copy the contents of `.funcpack\index.js` and paste them to the `messages`. Or upload the script to the Auzre Functions directly. Please note, when uploading your files, you need to include the single `.funcpack` directory (in the Functions App root), but you don't need your `node_modules` directory.
 Enjoy it.
 
 ## More words
