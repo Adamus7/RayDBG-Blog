@@ -72,7 +72,7 @@ info: Complete!
 At last, publish your code to Azure Functions by [Azure Func CLI](https://github.com/Azure/azure-functions-core-tools): `func azure functionapp publish <your app name>`. Or simply, copy the contents of `.funcpack\index.js` and paste them to the `messages`. Or upload the script to the Auzre Functions directly. Please note, when uploading your files, you need to include the single `.funcpack` directory (in the Functions App root), but you don't need your `node_modules` directory.
 Enjoy it.
 
-## More Words
+# More Words
 Ideally, there should be a script or a trigger function of Azure Functions to help users package the JS code automatically on the air once there is any code change, just like what they have done for C#.
 
 
