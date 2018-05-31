@@ -57,7 +57,7 @@ Now the question is how could I start editing the code of my Bot as `../.funcpac
 Since we know the executable script is packaged by `funcpack`, we can download the source code to a local folder and edit the Bot code locally, then pack the code by `funcpack` and upload them to Azure Functions.
 {% asset_img download-source-code-1.png 500 %}
 {% asset_img download-source-code-2.png 500 %}
-Open the source code locally with you preferred IDE.
+Open the source code locally with your preferred IDE.
 {% asset_img bot-src.png 500 %}
 Install `funcpack`: `npm install -g azure-functions-pack`.
 Install the dependence (botbuiler) by running `npm install` inside `messages` folder.
