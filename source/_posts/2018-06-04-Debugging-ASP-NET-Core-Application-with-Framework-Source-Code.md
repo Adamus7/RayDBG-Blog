@@ -46,7 +46,7 @@ To be honest, this is pretty cool!
 ASP.NET Core is a good example, but how could developers bring this feature into their own modules or NuGet package?
 Dotnet Core team have added support for generating SourceLink information in symbols, binaries, and NuGet packages in the .NET Core 2.1 RC SDK. The goal for the project is to enable anyone building NuGet libraries to provide source debugging for their users with almost no effort.
 Simply, you can enable SourceLink in your own project hosted on GitHub by following this example:
-```
+``` XML
 <Project Sdk="Microsoft.NET.Sdk">
  <PropertyGroup>
     <TargetFramework>netcoreapp2.1</TargetFramework>
