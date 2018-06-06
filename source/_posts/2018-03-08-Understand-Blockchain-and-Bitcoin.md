@@ -86,9 +86,7 @@ Bitcoin规定，每一笔交易都要依赖前一笔或几笔未花费的交易�
 # 总结起来
 比特币网络首先引入了一套加密的电子交易记账方式。为了解决这种交易记账方式在分布式网络下面临的问题，引入了区块链和工作量证明机制。
 
-Ref:
+Reference:
 *   [Bitcoin: A Peer-to-Peer Electronic Cash System](https://bitcoin.org/bitcoin.pdf)
 *	[区块链技术指南](https://www.gitbook.com/book/yeasy/blockchain_guide)
 *	动图 CopyRight [Mark Russinovich](https://twitter.com/markrussinovich)
-
-{% asset_img payQR.png 200 [我就试一下打赏码嘿嘿嘿] %}

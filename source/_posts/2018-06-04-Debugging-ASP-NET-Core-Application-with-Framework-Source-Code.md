@@ -67,7 +67,7 @@ Simply, you can enable SourceLink in your own project hosted on GitHub by follow
 ```
 For more details, please check this [document](https://github.com/dotnet/sourcelink/).
 
-Ref:
+Reference:
 * [Debugging Through the .NET Core Framework V2.0.3+ (Windows)](https://blogs.msdn.microsoft.com/vancem/2017/12/20/update-debugging-through-the-net-core-framework-v2-0-3-windows/)
 * [Debugging into ASP.NET Core 2.0 source code](https://laurentkempe.com/2017/09/26/Debugging-into-ASP.NET-Core-2.0-source-code/)
 * [Debugging ASP.NET Core 2.0 Source Code](https://www.stevejgordon.co.uk/debugging-asp-net-core-2-source)

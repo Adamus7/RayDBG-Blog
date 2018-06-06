@@ -84,9 +84,8 @@ tags:
 ## ICO
 TODO..
 
-Ref:
+Reference:
 *   [Bitcoin: A Peer-to-Peer Electronic Cash System](https://bitcoin.org/bitcoin.pdf)
 *	[区块链技术指南](https://www.gitbook.com/book/yeasy/blockchain_guide)
 *	动图 CopyRight [Mark Russinovich](https://twitter.com/markrussinovich)
 
-{% asset_img payQR.png 200 [试一下] %}

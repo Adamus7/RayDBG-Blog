@@ -125,7 +125,7 @@ To gather detailed information about a performance issue of .Net Core  Applicati
 7.  Open the trace in PerfView, then you can explore the CPU sampling data. Flame Graph is also available here.
 Using [BPF Complier Collection (BCC)](https://github.com/iovisor/bcc) is another good choice for performance analysis as BPF is more flexible and efficiency. Please follow the [tutorial of BCC](https://github.com/iovisor/bcc/blob/master/docs/tutorial.md).
 
-Ref:
+Reference:
 * [Performance Tracing on Linux](https://github.com/dotnet/coreclr/blob/master/Documentation/project-docs/linux-performance-tracing.md)
 * [Debugging CoreCLR](https://github.com/dotnet/coreclr/blob/master/Documentation/building/debugging-instructions.md)
 * [Analyzing a .NET Core Core Dump on Linux ](http://blogs.microsoft.co.il/sasha/2017/02/26/analyzing-a-net-core-core-dump-on-linux/)
