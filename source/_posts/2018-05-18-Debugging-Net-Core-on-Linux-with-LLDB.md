@@ -1,13 +1,13 @@
 ---
-title: Debugging .Net Core on Linux with LLDB
+title: Debugging .NET Core on Linux with LLDB
 date: 2018-05-18 15:18:33
 tags:
-- .Net Core
+- .NET Core
 - LLDB
 - Debugging
 ---
-.Net Core is designed to be cross-platform, modular and optimized for cloud. What if there is a exception or a memory issue of a .Net Core application on Linux platform? On Windows, we have a set of tools to do different analysis. For example, I can take a process dump by ProcDump and feed it to WinDBG for exception or memory analysis. 
-Actually, we can do similar things on Linux for .Net Core application now.
+.NET Core is designed to be cross-platform, modular and optimized for cloud. What if there is a exception or a memory issue of a .NET Core application on Linux platform? On Windows, we have a set of tools to do different analysis. For example, I can take a process dump by ProcDump and feed it to WinDBG for exception or memory analysis. 
+Actually, we can do similar things on Linux for .NET Core application now.
 <!-- more -->
 # Tools
 Simply, here is a cheat sheet of the different tools on Windows and Linux:
@@ -21,7 +21,7 @@ Simply, here is a cheat sheet of the different tools on Windows and Linux:
 | Dump anlysis      | LLDB              | VS, WinDBG    |
 
 ## LLDB
-The LLDB debugger is conceptually similar to the native Windows debugging tools in that it is a low level and command live driven debugger. It is available for a number of different *NIX systems as well as MacOS. Part of the reason the .NET Core team chose the LLDB debugger was for its extensibility points that allowed them to create the SOS plugin which can be used to debug .NET core applications. The SOS LLDB plugin contains the same commands that we have grown accustomed to in the Windows world. Therefore, LLDB is the ideal debugger for .Net Core on Linux.
+The LLDB debugger is conceptually similar to the native Windows debugging tools in that it is a low level and command live driven debugger. It is available for a number of different *NIX systems as well as MacOS. Part of the reason the .NET Core team chose the LLDB debugger was for its extensibility points that allowed them to create the SOS plugin which can be used to debug .NET core applications. The SOS LLDB plugin contains the same commands that we have grown accustomed to in the Windows world. Therefore, LLDB is the ideal debugger for .NET Core on Linux.
 For .NET Core version 1.x and 2.0.x, libsosplugin.so is built for and will only work with version 3.6 of LLDB. For .NET Core 2.1, the plugin is built for 3.9 LLDB and will work with 3.8 and 3.9 LLDB.
 So you need to download and install correct version of LLDB into the box.
 [Install instruction for LLDB](https://lldb.llvm.org/download.html).
@@ -31,8 +31,8 @@ Microsoft has shipped ProcDump to Linux which provides a convenient way for Linu
 [Install instruction for ProcDump of Linux](https://github.com/Microsoft/ProcDump-for-Linux).
 
 ## SOS plugin for LLDB
-The SOS Debugging Extension helps you debug managed programs in debugger by providing information about the internal Common Language Runtime (CLR) environment. The .Net Core team also bring this available on Linux for LLDB.
-On Linux, the SOS plugin shipped with .Net Core SDK, you can find it here: _/usr/share/dotnet/shared/Microsoft.NETCore.App/2.0.0/libsosplugin.so_
+The SOS Debugging Extension helps you debug managed programs in debugger by providing information about the internal Common Language Runtime (CLR) environment. The .NET Core team also bring this available on Linux for LLDB.
+On Linux, the SOS plugin shipped with .NET Core SDK, you can find it here: _/usr/share/dotnet/shared/Microsoft.NETCore.App/2.0.0/libsosplugin.so_
 
 # Debug It
 
@@ -107,9 +107,9 @@ HistObjFind (histobjfind)
 HistClear (histclear)
 ```
 
-# Profiling the .Net Core Application on Linux
-To gather detailed information about a performance issue of .Net Core  Application on Linux, you can follow the simple instructions here:
-1.  Download [perfcollect](https://github.com/dotnet/coreclr/blob/master/Documentation/project-docs/linux-performance-tracing.md) script provided by .Net Core team.
+# Profiling the .NET Core Application on Linux
+To gather detailed information about a performance issue of .NET Core  Application on Linux, you can follow the simple instructions here:
+1.  Download [perfcollect](https://github.com/dotnet/coreclr/blob/master/Documentation/project-docs/linux-performance-tracing.md) script provided by .NET Core team.
     `curl -OL http://aka.ms/perfcollect`
 2.  Make the script executable.
     `chmod +x perfcollect`
