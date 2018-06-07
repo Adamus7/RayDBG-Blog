@@ -1,5 +1,5 @@
 ---
-title: Configure wired authentication settings via GPO
+title: Configure Wired Authentication Settings via GPO
 date: 2017-11-10 16:26:30
 tags:
 - GPO

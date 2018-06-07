@@ -1,5 +1,5 @@
 ---
-title: How to initiate outbound messages from Bot to Skype for Business User
+title: How to Initiate Outbound Messages from Bot to Skype for Business User
 date: 2018-04-20 11:24:07
 tags: 
 - Microsoft Bot Framework 
