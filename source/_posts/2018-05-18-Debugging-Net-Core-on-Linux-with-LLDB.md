@@ -133,7 +133,6 @@ Reference:
 * [Analyzing .NET Core memory on Linux with LLDB](https://codeblog.dotsandbrackets.com/net-core-memory-linux/)
 * [Debugging .NET core with SOS everywhere](https://blogs.msdn.microsoft.com/premier_developer/2017/05/02/debugging-net-core-with-sos-everywhere/)
 
-{% asset_img payQR.png 200 [试一下] %}
 
 
 
