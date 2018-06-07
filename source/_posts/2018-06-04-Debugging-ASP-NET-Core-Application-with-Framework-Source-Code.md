@@ -4,9 +4,9 @@ date: 2018-06-04 16:37:07
 tags:
 - ASP.NET Core
 - Debugging
-- .Net Core
+- .NET Core
 ---
-Since .Net Core and ASP.NET Core is open sourced, developers are able to step into the source code of the framework for different purposes. 
+Since .NET Core and ASP.NET Core is open sourced, developers are able to step into the source code of the framework for different purposes. 
 As you may know, the source code of the dotnet runtime ([CoreCLR](https://github.com/dotnet/coreclr)), foundational libraries ([CoreFX](https://github.com/dotnet/corefx)) and [ASP.NET Core](https://github.com/aspnet/Home) are hosted on GitHub. With all the source code available, is that possible to have a different debugging experience with the framework source code?
 <!-- more -->
 # PDB and SourceLink

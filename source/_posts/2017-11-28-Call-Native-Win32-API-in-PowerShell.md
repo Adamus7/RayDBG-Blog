@@ -28,7 +28,7 @@ BOOL WINAPI SystemParametersInfo(
 ```
 
 # Add-Type
-[Add-Type](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/add-type?view=powershell-5.1) is a cmdlet allow us to extend PowerShell session with .Net Framework type (a class).
+[Add-Type](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/add-type?view=powershell-5.1) is a cmdlet allow us to extend PowerShell session with .NET Framework type (a class).
 There is an example about how to call native Windows APIs in the document:
 ```PowerShell
 PS C:\> $Signature = @"
