@@ -64,7 +64,7 @@ pagination_dir: page
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
 # theme: tranquilpeak # Set by Ray. 2017-05-09
-theme: next-reloaded
+theme: next
 
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
