@@ -3,6 +3,7 @@
 # ---------------------------------------------------------------
 # Ray 24 Dec 2018
 # 6.6.0
+# Submodule push test
 
 # If false, merge configs from `_data/next.yml` into default configuration (rewrite).
 # If true, will fully override default configuration by options from `_data/next.yml` (override). Only for NexT settings.
