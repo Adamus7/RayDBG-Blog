@@ -1,5 +1,5 @@
 ---
-title: Setup My Deep Leaning Environment
+title: "Setup My Deep Leaning Environment: Anaconda, Jupyter Notebook and TensorFlow"
 date: 2018-12-24 23:34:30
 tags:
 - Deep Learning
@@ -84,6 +84,40 @@ Type "help", "copyright", "credits" or "license" for more information.
 '1.12.0'
 >>>      
 ```
+
+# Conda Install or Pip Install
+Pip is focused around Python. It is a package manager that facilitates installation, upgrade, and uninstallation of python packages. But Conda is a packaging tool and installer for any software that aims to do more than what pip does; handle library dependencies outside of the Python packages as well as the Python packages themselves.
+
+# ModuleNotFound Error
+You may hit `ModuleNotFoundError: No module named 'lightgbm'` sometimes.
+Check the sys.executable in Jupyter Notebook to verify the kernel path first:
+{% asset_img kernel-error.png 600%}
+Or you can check the kernel spec via command `jupyter kernelspec list`.
+```bash
+(my-env) $ jupyter kernelspec list
+Available kernels:
+  py36-env    C:\Users\yuray\AppData\Roaming\jupyter\kernels\py36-env
+  python3     C:\Users\yuray\AppData\Local\Continuum\anaconda3\envs\py36-env\share\jupyter\kernels\python3
+```
+Then check the package installation status using `conda list`:
+```bash
+(my-env) $ conda list
+# packages in environment at C:\Users\yuray\AppData\Local\Continuum\anaconda3\envs\py36-env:
+#
+# Name                    Version                   Build  Channel
+_tflow_select             2.1.0                       gpu
+absl-py                   0.6.1                    py36_0
+absl-py                   0.6.1                     <pip>
+astor                     0.7.1                    py36_0
+backcall                  0.1.0                    py36_0
+blas                      1.0                         mkl
+ca-certificates           2018.03.07                    0
+...
+```
+Reference:
+* [Anaconda, Jupyter Notebook, TensorFlow and Keras for Deep Learning](https://medium.com/@margaretmz/anaconda-jupyter-notebook-tensorflow-and-keras-b91f381405f8)
+* [Jupyter running wrong python kernel](https://github.com/jupyter/jupyter/issues/270)
+
 
 
 
