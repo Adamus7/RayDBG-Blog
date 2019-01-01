@@ -69,6 +69,13 @@ Start the Jupyter Notebook and you will find the new created kernel:
 
 For more details, check the [document](https://ipython.readthedocs.io/en/stable/install/kernel_install.html).
 
+## Update: Use nb_conda Extension to Manage Kernels
+[nb_conda](https://github.com/Anaconda-Platform/nb_conda) Provides Conda environment and package access extension from within Jupyter. This extension adds a Conda Packages item to the Kernel menu. Selecting this item displays the list of Conda packages in the environment associated with the running kernel, and the list of available packages. You can perform the same actions as in the Conda tab, but only against the current environment.
+```bash
+# Install nb_conda
+conda install nb_conda
+```
+
 # Install TensorFlow 
 We choose TensorFlow GPU support version. Follow the [instruction](https://www.tensorflow.org/install/gpu) to install the pre-requisites.
 ```bash
@@ -85,10 +92,11 @@ Type "help", "copyright", "credits" or "license" for more information.
 >>>      
 ```
 
-# Conda Install or Pip Install
+# Notes
+## 1. Conda Install or Pip Install
 Pip is focused around Python. It is a package manager that facilitates installation, upgrade, and uninstallation of python packages. But Conda is a packaging tool and installer for any software that aims to do more than what pip does; handle library dependencies outside of the Python packages as well as the Python packages themselves.
 
-# ModuleNotFound Error
+## 2. ModuleNotFound Error Troubleshooting
 You may hit `ModuleNotFoundError: No module named 'lightgbm'` sometimes.
 Check the sys.executable in Jupyter Notebook to verify the kernel path first:
 {% asset_img kernel-error.png 600%}
