@@ -2,7 +2,7 @@
 title: How to Call Azure Management REST API in Logic Apps
 date: 2017-06-10 15:26:51
 tags:
-- Auzre
+- Azure
 - Logic Apps
 - CRM WebAPI
 ---
