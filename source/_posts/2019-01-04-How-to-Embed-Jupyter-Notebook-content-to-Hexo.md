@@ -1,6 +1,6 @@
 ---
 layout: '[post]'
-title: Embed Jupyter Notebook into Hexo Post
+title: Embed Jupyter Notebook Content into Hexo Post
 date: 2019-01-04 15:30:01
 tags:
 - Hexo
