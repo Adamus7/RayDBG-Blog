@@ -2,7 +2,7 @@
 title: How to Call CRM WebAPI in Logic Apps
 date: 2017-05-17 14:16:25
 tags:
-- Auzre
+- Azure
 - Logic Apps
 - CRM WebAPI
 ---
