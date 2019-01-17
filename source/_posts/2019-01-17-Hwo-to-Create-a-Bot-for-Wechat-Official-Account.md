@@ -58,7 +58,7 @@ public static bool IsMessageFromWX(string signature, string nonce, string timest
 Bot端的功能开发我希望在另外一篇博客中详细的解释，这里用一个样例Bot作为接入演示。
 ## DirectLine的配置
 在Azure Bot Service上， 需要开启DirectLine Channel并获取对应的接入Secret Key。
-{% asset_img bot-driectline.png 500 %}
+{% asset_img bot-directline.png 500 %}
 在之前的.NET Core Web API应用中，我们可以用`Microsoft.Bot.Connector.DirectLine`来帮我们简化开发工作，避免手动的构造HTTP请求。在Directline中，一个完整的简单对话流程如下：
 1. Start Conversation
 2. Send an activity to the bot
