@@ -7,21 +7,21 @@ tags:
 - Microsoft Bot Framework
 - WeChat
 ---
-Bot，会话助手类工具，一直有着相当广泛的应用。最早的Bot可能类似电信的电话查询系统：“查询账单请按1，修改密码请按2……”。这种机械式的应用渐渐被更为智能的智能对话助理所代替，典型代表有Siri和Cortana这种个人助理应用。对于个人和企业，如何开发一个具有一定业务能力的Bot，一直是一个比较热门的话题。在这篇博客中，我将记录如何基于Microsoft Bot Framework为微信公众号添加一个智能对话机器人。
+Bot，会话助手类工具，一直有着相当广泛的应用。最早的Bot可能类似电信的电话查询系统：“查询账单请按1，修改密码请按2……”。这种机械式的应用渐渐被更为智能的对话助理所代替，典型代表有Siri和Cortana这种个人助理类应用。对于个人和企业，如何开发一个具有一定业务能力的Bot，一直是一个比较热门的话题。在这篇博客中，我将记录如何基于Microsoft Bot Framework为微信公众号添加一个智能对话机器人。
 <!-- more -->
 # 背景
 在商业环境中，一个Bot不仅要有趣，还要有业务能力。一个优秀的Bot要有自然语言识别能力、上下文处理能力和在对话中实现业务的能力。例如，如果要开发一个Bot来处理一家咖啡店的订座服务，这个Bot需要像服务员一样能够理解客户的语言，了解客户的意图，获取语句中的关键信息（时间，数量，地点等），最后用对话方式在前台完成业务。
-Microsoft Bot Framework提供了一套Bot开发的框架和工具，包括Azure Bot Service，Bot Builder SDK和相对丰富的Bot Channels。这套工具可以帮助开发者在短时间内开发出一个个人或企业级Bot。这套Framework可以帮助开发者轻松的集成自然语言处理服务，认知服务并打通不同的沟通渠道（channels）。Bot Channels目前支持了不少流行的社交和通信应用，因此开发者只要开发一套Bot，就可以部署到不同的社交通信应用中，包括Facebook Pages、Microsoft Teams、Skype、Slack等等。
+Microsoft Bot Framework提供了一套Bot开发的框架和工具，包括Azure Bot Service，Bot Builder SDK和相对丰富的Bot Channels。这套工具可以帮助开发者在短时间内开发出一个个人或企业级Bot。这套Framework可以轻松集成自然语言处理服务，认知服务并打通不同的沟通渠道（channels）。Bot Channels目前支持了不少流行的社交和通信应用，因此开发者只要开发一套Bot，就可以部署到不同的社交通信应用中，包括Facebook Pages、Microsoft Teams、Skype、Slack等等。
 {% asset_img what-is-bot.png 500 %}
-微信朋友圈和公众号作为一个非常特殊的社交网络，内容非常丰富，但生态也相对封闭。给公众号加个Bot，说不定还挺好玩。目前Bot Channels并没有官方的支持微信和公众号Channel。虽然公众号本身提供了基于关键字的自动回复功能，但是这个没法实现更多的业务功能。公众号同时也提供了开发接口，可以把用户输入的消息转发到设定的服务器上，这给集成Bot服务提供了可能。这里主要记录一下如何通过公众号开发接口来接入Azure Bot Service。
+微信朋友圈和公众号作为一个非常特殊的社交网络，内容非常丰富，但生态也相对封闭。给公众号加个Bot，让用户更自然地与公众号交流，说不定还挺好玩。目前Bot Channels并没有官方的支持微信和公众号Channel。公众号本身提供了基于关键字的自动回复功能，但是这个选项没法实现更多的业务功能。另一方面，公众号同时也提供了开发接口，可以把用户输入的消息转发到设定的服务器上，这给集成Bot服务提供了可能。这里主要记录一下如何通过公众号开发接口来接入Azure Bot Service。
 
 # 公众号开发设置
 首先需要申请注册公众号。然后接入微信公众平台开发，开发者需要按照如下步骤完成：`填写服务器配置`, `验证服务器地址的有效性`, `依据接口文档实现业务逻辑`。
 ## 填写服务器配置
 {% asset_img dev-config-1.png 500 %}
-这里需要填写服务器接口URL，注意这里微信只会给这个URL转发消息和获取回复。Token可以随便填一个。EncodingAESKey可以随机生成一个，用以后面的消息加密。加密方式可以按需设置。
+这里需要填写服务接口URL，注意这里微信开发平台会且只会给这个URL发送HTTP GET/POST请求，开发者无法定义更多API接口。Token可以随便填一个，在接下来的消息来源验证中会用到。EncodingAESKey可以随机生成一个，用以后面的消息加密。加密方式可以按需设置。
 ## 服务器验证
-点击提交时，微信会发送一个HTTP GET请求到设定的服务URL上，服务器必须的原样返回请求中所带的echostr才能通过验证。因此，在提交前，要保证你的的服务URL可以正常工作。这里我在Azure App Services上部署了一个基于ASP.NET Core的Web API应用，针对微信的验证请求原样返回echostr。
+点击提交时，微信平台会立刻发送一个HTTP GET请求到设定的服务URL上，服务器必须的原样返回请求中所带的echostr才能通过验证。因此，在提交前，要保证你的的服务URL可以正常工作。这里我在Azure App Services上部署了一个基于ASP.NET Core的Web API应用，针对微信的验证请求原样返回echostr。
 ```csharp
 [HttpGet("")]
 public string ReturnEchostr([FromQuery]string signature, [FromQuery]string nonce, [FromQuery]string timestamp, [FromQuery]string echostr)
@@ -141,7 +141,7 @@ public async Task<string> WxPost([FromQuery]string signature, [FromQuery]string 
 ```
 在公众号上测试效果：
 {% asset_img official-account-test.png 300 %}
-至此用户已经可以和公众号的Bot进行对话，Bot也能正确识别对话的状态。在后面的博客中，我将记录Bot端更多功能的实现。
+至此，用户已经可以和公众号的Bot进行对话，Bot也能正确识别和记录对话的状态。在后面的博客中，我将记录Bot端更多功能的实现。
 
 Reference:
 * [Azure Bot Service Documentation](https://docs.microsoft.com/en-us/azure/bot-service/?view=azure-bot-service-4.0)
