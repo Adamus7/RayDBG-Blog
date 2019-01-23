@@ -66,9 +66,9 @@ Bot端的功能开发我希望在另外一篇博客中详细的解释，这里�
 
 ## 通过DirectLine接入Bot
 消息转发的功能同样在上面的.NET Core Web API应用中实现。我们可以用`Microsoft.Bot.Connector.DirectLine`来帮我们简化开发工作，避免手动的构造HTTP请求。在Directline中，一个完整的简单对话流程一般如下：
-1. Start Conversation（获取一个conversation id）
-2. Send an activity to the bot（向Directline的endpoint发送一个类型为message的Activity）
-3. Receive activities from the bot（通过conversation id从Directline的endpoint获取Bot的回复）
+1. Start Conversation（获取一个`conversation id`）
+2. Send an activity to the bot（向DirectLine的endpoint发送一个类型为`message`的`Activity`）
+3. Receive activities from the bot（通过`conversation id`从DirectLine的endpoint获取Bot的回复）
 4. End a conversation（结束对话）
 
 步骤2和3可以重复进行，不需要严格的一一对应。步骤3中，每一次的返回值除了有一个`activity Set`，还有一个`watermark`标识。再次向Bot请求回复时，可以带上之前获得的`watermark`，那么已经回复过的`activity`将不会出现在新的`activity set`中。作用类似TCP协议中的ACK，通过watermark标识可以保证Bot回复的消息不会丢失。
