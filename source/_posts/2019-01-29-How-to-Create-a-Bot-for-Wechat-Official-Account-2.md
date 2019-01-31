@@ -79,9 +79,10 @@ Middleware工作在Adaptor和Bot逻辑单元之间，跟其他的消息系统的
 {% asset_img bot-builder-state.png 500 %}
 ### Storage
 目前Bot SDK直接支持三种Storage方案：
-1.  Memory storage;
-2.  Azure Blob storage;
-3.  Azure Cosmos DB (NoSQL) storage.
+1.  Memory storage
+2.  Azure Blob storage
+3.  Azure Cosmos DB (NoSQL) storage
+
 通过简单的配置，可以把State保存到以上三种不同的地方，而不用考虑数据结构或者数据库的设计。另外，当前是支持自定义其他Storage方案的，不在此详细记录。
 ### State Management
 如何从上述的Storage层读取和写入数据，是State Management做的事情。开发者不需要关心具体的实现细节，SDK会自动处理数据的保存。除此支持，SDK粗略的划分了三种State的类型：`User state`, `Conversation state`, 
