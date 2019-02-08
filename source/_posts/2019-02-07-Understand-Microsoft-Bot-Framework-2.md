@@ -7,3 +7,4 @@ tags:
 - Microsoft Bot Framework
 - WeChat
 ---
+<!-- more -->
