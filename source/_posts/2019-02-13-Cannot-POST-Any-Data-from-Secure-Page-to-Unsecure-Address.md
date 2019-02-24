@@ -9,7 +9,7 @@ tags:
 <html>
 <body>
 
-<h2>POST data to a HTTP endpoint</h2>
+<h2>POST data to a HTTP endpoint.</h2>
 
 <p>Bad case: submit to a HTTP://test.contoso.com/testurl</p>
 <form action="http://test.contoso.com/testurl" method="POST">
