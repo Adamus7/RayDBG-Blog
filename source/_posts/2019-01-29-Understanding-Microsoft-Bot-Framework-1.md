@@ -1,6 +1,6 @@
 ---
 layout: '[post]'
-title: 理解Microsoft Bot Framework（一）：BotBuilder
+title: 理解Microsoft Bot Framework：BotBuilder
 date: 2019-01-29 17:53:03
 tags:
 - Azure
