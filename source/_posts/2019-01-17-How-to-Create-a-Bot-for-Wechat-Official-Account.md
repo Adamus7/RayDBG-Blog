@@ -1,6 +1,6 @@
 ---
 layout: '[post]'
-title: 给微信公众号加个Bot（一）
+title: 给微信公众号加个Bot
 date: 2019-01-17 10:42:23
 tags:
 - Azure
