@@ -34,7 +34,7 @@ remote: Counting objects: 100% (179429/179429), done.
 remote: Compressing objects: 100% (56607/56607), done.
 Receiving objects:   4% (7628/177189), 1.48 MiB | 8.00 KiB/s
 ```
-发展update卡在从github仓库获取文件的过程。这个结果与手动从github下载文件慢的症状相互印证。
+发现update卡在从github仓库获取文件的过程。这个结果与手动从github下载文件慢的症状相互印证。
 
 # 解决
 由于问题主要是在国内网络环境github下载慢，因此尝试：
