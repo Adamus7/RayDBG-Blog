@@ -79,8 +79,25 @@ syntax on
 ```
 
 # SSH配置
+1. 配置好登陆用的私钥。
+2. 在`~/.ssh`下面创建config文件。
+3. 复制私钥到`~/.ssh`的子目录下。
+4. 编辑config文件：
+```
+Host <myshortname realname.example.com>
+    HostName <realname.example.com>
+    IdentityFile ~/.ssh/<realname_rsa> # private key for realname
+    User <remoteusername>
 
+# or
 
+Host <hostalias>
+    HostName <host ip address>
+    IdentityFile ~/.ssh/<realname_rsa> # private key for realname
+    User <remoteusername>
+
+```
+配置好之后可以直接`ssh <hostname>`登陆远程机器。
 
 
 
