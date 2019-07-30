@@ -83,9 +83,11 @@ Libra在Validator上划分出了多个逻辑组件，不同的组件负责不同
 1. Validator通过AC获取交易。
 2. AC通过VM执行交易检查，包括：使用交易中的公钥（地址）验证交易签名（基于密码学的数字签名原理：有且只有通过Alice的公钥解开Alice的签名可以获得和原文内容一致的文本；由此可以确认交易的发起者一定是Alice本人，且交易的内容真实可信），检查Alice余额是否足够，交易序列号是否正常等。
 3. 当交易通过检查，AC会把这个交易放到Mempool中。
+
 ### 在 Validator 之间共享交易信息
 4. Mempool中可能已经有很多比交易了。
 5. Mempool会通过shared-mempool协议和其他Validator节点共享各自所有的已接受的交易信息。
+
 ### 打包提议
 6. 假设当前Validator是共识过程中的proposer/leader（不在此详细讨论Libra共识算法的具体过程），该节点会从Mempool中拿出一部分交易，打成一个区块（Block）。Consensus模块负责同步这个块到其他Validator节点上。
 7. Consensus模块接下来负责协调各个Validator对该区块内当交易内容达成共识，包括交易记录的顺序。
