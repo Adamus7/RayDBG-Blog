@@ -54,8 +54,8 @@ State（状态）指账本中某个数据的状态（值），在不同的时间
 
 ## Account 模型
 Libra中的账户模型和以太坊类似，从逻辑上看，账户是一个拥有两类资源的一个集合：Move Mouldes（程序代码）和Move Resources（数据）。Mouldes存储的是Move语言字节码，即智能合约的代码，这些代码可以去访问或更新Resouces中的数据。Resouces存储是是数据部分，账户拥有的Libra Coin也是存储在Resource中。
-账户的地址Address是一个256bit的值。前面提到，Libra网络通过一个k-v map的形式在Ledger State中维护了Address到Account（Mouldes和Resoucrces）的映射。
-要创建一个Libra账户，首先要构造一对公私钥（vk, sk），该账户的地址等于公钥vk的hash值，`address=hash（vk）`。注意，这个时候账户并没有在Ledger State中出现，只有当一个已经存在的账户向该地址发起一笔交易的时候，Libra网络才会在Ledger State中创建有关该账户的映射结构。一个用户可以有无数个账户，一个账户下面可以有无数的Mouldes和Resource。
+账户的地址Address是一个256bit的值。前面提到，Libra网络通过一个`k-v map`的形式在Ledger State中维护了Address到Account（Mouldes和Resoucrces）的映射。
+要创建一个Libra账户，首先要构造一对公私钥`(vk, sk)`，该账户的地址等于公钥`vk`的`hash`值，`address=hash(vk)`。注意，这个时候账户并没有在Ledger State中出现，只有当一个已经存在的账户向该地址发起一笔交易的时候，Libra网络才会在Ledger State中创建有关该账户的映射结构。一个用户可以有无数个账户，一个账户下面可以有无数的Mouldes和Resource。
 
 ## Versioned Database
 在讨论这个部分之前，先说一点题外话。虽然Libra把自己称之为Libra Blockchian，然而Libra似乎并没有引入区块的链式（Block chain）结构，仅在共识协议的实现上引入了“区块”的概念作为共识算法的“优化”手段。这并不奇怪，实际上业界已经意识到Blockchian这个词并不能代表这一类系统的核心特性，很多学者和分析师更愿意用分布式账本技术（Distributed Ledger Technology，DLT ）来称呼这一类技术。这类系统的核心是在对等的分布式环境下维护一个全网状态统一的账本，至于是不是基于区块链机制实现的，并不重要。
@@ -100,7 +100,7 @@ Libra在Validator上划分出了多个逻辑组件，不同的组件负责不同
 
 ### Commit 区块
 12. 当一个区块当执行结果被绝大多数当Validator认可之后，Execution模块就会从刚刚的cache中读取之前的执行结果，然后把所有当交易提交到存储模块做持久化保存。
-13. 至此，Alice的转账交易完成，Alice的账户余额减少了(10 + gas) Libra，Bob的账户增加10，Alice的sequence number从5变成6。
+13. 至此，Alice的转账交易完成，Alice的账户余额减少了`(10 + gas) ` Libra，Bob的账户增加`10`，Alice的`sequence number`从`5`变成`6`。
 
 # 小结
 从基本的设计结构和流程上，Libra似乎没有给世界带来什么特别大的惊喜。Libra Reserve的发币机制是一个特色，但更多的是金融层面的创新。
