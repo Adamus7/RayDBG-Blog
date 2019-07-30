@@ -85,7 +85,7 @@ Libra在Validator上划分出了多个逻辑组件，不同的组件负责不同
 3. 当交易通过检查，AC会把这个交易放到Mempool中。
 
 ### 在 Validator 之间共享交易信息
-4. Mempool中可能已经有很多比交易了。
+4. Mempool中可能已经有很多笔交易了。
 5. Mempool会通过shared-mempool协议和其他Validator节点共享各自所有的已接受的交易信息。
 
 ### 打包提议
