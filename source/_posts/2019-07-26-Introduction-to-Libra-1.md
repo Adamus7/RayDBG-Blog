@@ -1,5 +1,5 @@
 ---
-title: Libra技术原理浅析（一）
+title: Libra技术原理浅析（一）：基本设计
 date: 2019-07-26 11:36:13
 tags:
 - Libra
