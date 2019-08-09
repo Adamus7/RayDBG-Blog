@@ -1,5 +1,5 @@
 ---
-title: Libra技术原理浅析（二）：基本设计
+title: Libra技术原理浅析（二）：Move语言
 date: 2019-08-09 13:00:45
 tags:
 - Libra
