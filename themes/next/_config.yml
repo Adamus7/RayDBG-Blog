@@ -332,8 +332,8 @@ codeblock:
 reward:
   enable: true
   #comment: Donate comment here
-  wechatpay: /payQR.jpg
-  #alipay: /images/alipay.jpg
+  wechatpay: /payQR-wechat.png
+  alipay: /payQR.jpg
   #bitcoin: /images/bitcoin.png
 
 # Related popular posts
