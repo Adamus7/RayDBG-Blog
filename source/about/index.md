@@ -5,4 +5,4 @@ type: "about"
 comments: false
 ---
 
-Hey, this is Ray.
+Being the detective in a crime movie where you are also the murderer.
